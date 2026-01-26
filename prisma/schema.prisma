@@ -8,7 +8,7 @@ generator client {
   provider = "prisma-client-js"
 }
 datasource db {
-  provider  = "postgresql"
+  provider  = "sqlite"
   url  	    = env("DATABASE_URL")
 }
 model Resume {
@@ -33,7 +33,7 @@ model Resume {
 
   workExperiences WorkExperience[]
   educations      Education[]
-  skills          String[]
+  skills          String @default("")
 
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt

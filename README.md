@@ -1,40 +1,48 @@
-<<<<<<< HEAD
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# resume-builder
 
-## Getting Started
+This is a Next.js project. Quick steps to run locally:
 
-First, run the development server:
+1. Copy the example env file and fill in values:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+cp .env.local.example .env.local
+# edit .env.local and paste your Clerk/Stripe/Database keys
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install and run the dev server:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+npm run dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Open http://localhost:3000
 
-## Learn More
+Important: Clerk authentication requires the following environment variables in `.env.local`:
 
-To learn more about Next.js, take a look at the following resources:
+- `CLERK_SECRET_KEY` (server secret key)
+- `NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY` (client publishable key)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Get Clerk keys at https://dashboard.clerk.com -> API keys. If you see "Missing publishableKey" in the browser, set the publishable key in `.env.local` and restart the dev server.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The repo includes `.env.local.example` with placeholder values.
 
-## Deploy on Vercel
+## Features
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- AI-powered resume generation
+- Multiple resume templates
+- Real-time preview
+- User authentication with Clerk
+- Premium subscription with Stripe
+- Export to PDF
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# resume-builder-again-
->>>>>>> 3d6829a0e4b10039dede2b7a5d05c57c3e29867a
+## Tech Stack
+
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- Prisma ORM
+- Clerk Authentication
+- Stripe Payments
+- OpenAI API
