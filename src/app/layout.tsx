@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import DevNotice from "@/components/DevNotice";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
           >
             {children}
             <Toaster />
+            <DevNotice />
           </ThemeProvider>
         </body>
       </html>
